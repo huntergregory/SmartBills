@@ -47,6 +47,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let green = UIColor(displayP3Red: 71.0/255.0, green: 217.0/255.0, blue: 191.0/255.0, alpha: 1.0)
     let darkBlue = UIColor(displayP3Red: 4.0/255.0, green: 81.0/255.0, blue: 140.0/255.0, alpha: 1.0)
     let darkestBlue = UIColor(displayP3Red: 0.0/255.0, green: 48.0/255.0, blue: 86.0/255.0, alpha: 1.0)
+    let pink = UIColor(displayP3Red: 255.0/255.0, green: 190.0/255.0, blue: 222.0/255.0, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,15 +73,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             noCentsButton.layer.cornerRadius = 10
         }
-        noCentsButton.layer.borderWidth = 1
-        noCentsButton.layer.borderColor = lightBlue.cgColor
+        //noCentsButton.layer.borderWidth = 1
+        //noCentsButton.layer.borderColor = green.cgColor
         noCentsButton.setTitleShadowColor(darkestBlue, for: .normal)
+        noCentsButton.setTitleColor(green, for: .normal)
         
-        //configure keyboard appearance
+        //configure text fields and their keyboard appearance
         billTextField.keyboardAppearance = .dark
         taxTextField.keyboardAppearance = .dark
+        billTextField.textColor = darkestBlue
+        taxTextField.textColor = darkestBlue
         
         //position total label
+        totalLabel.backgroundColor = lightBlue
+        
+        totalLabel.textColor = darkestBlue
         totalLabel.transform = CGAffineTransform(translationX: totalLabel.frame.width, y: 0)
         
         billTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
@@ -105,6 +112,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func textFieldEditingEnded(_ sender: UITextField) {
         if sender == taxTextField {
             self.view.removeGestureRecognizer(self.tapTax)
+            getPossibleTips()
         } else {
             self.view.removeGestureRecognizer(self.tap)
         }
@@ -228,7 +236,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             /////FIX SO MORE LEGIBLE
         } else {
             color = UIColor.white
-            percentSlider.minimumTrackTintColor = UIColor(displayP3Red: 0.0/255.0, green: 161.0/255.0, blue: 217.0/255.0, alpha: 1.0)
+            percentSlider.minimumTrackTintColor = lightBlue
         }
         
         for k in 0 ..< sliderLabelCollection.count {
@@ -478,7 +486,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else { //normal stuff
             cell.textLabel?.text = "Tip: $\(calculation.tip)"
             cell.detailTextLabel?.text = "\(calculation.percent)%"
-            cell.textLabel?.textColor = UIColor.black
+            cell.textLabel?.textColor = darkestBlue   //OR    UIColor.black
+            cell.detailTextLabel?.textColor = darkestBlue
         }
         
         return cell
