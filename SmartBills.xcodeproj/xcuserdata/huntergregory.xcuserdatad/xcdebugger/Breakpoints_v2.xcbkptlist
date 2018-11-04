@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartBillWidget/TodayViewController.swift"
-            timestampString = "560719447.9633141"
+            timestampString = "560731691.449261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "157"
             endingLineNumber = "157"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "updateBillLabel(withIndex:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartBillWidget/TodayViewController.swift"
-            timestampString = "560719447.964039"
+            timestampString = "560731691.449955"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "169"
             endingLineNumber = "169"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "updateBillLabel(withIndex:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
