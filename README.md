@@ -1,2 +1,4 @@
-# Do Bills Better
-With this sleek Tip Calculator, simply press a button to round the total to the nearest dollar, then select the best tip. Or stick to the tried & true by sliding the tip percentage to the desired amount. An intuitive design that'll make you never have to think about tipping again.
+Functionality: 
+1. App finds tips that round the bill to a whole dollar (0 cents). User can select the best of these tips from a table.
+2. Can slide tip percentage to desired amount too.
+3. Today extension (widget) similar to #1
