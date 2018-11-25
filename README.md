@@ -1,4 +1,4 @@
 Functionality: 
-1. Press a button to round the total to the nearest dollar, then select the best tip from a table. 
-2. Slide tip percentage to the desired amount
-3. Widget with same functionality as #1
+1. App finds tips that round the bill to a whole dollar (0 cents). User can select the best of these tips from a table.
+2. Can slide tip percentage to desired amount too.
+3. Widget with same functionality as #1.
