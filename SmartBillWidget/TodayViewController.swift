@@ -6,6 +6,11 @@
 //  Copyright © 2018 Hunter Gregory. All rights reserved.
 //
 
+
+//REMAINING FIXES
+//Blue arrows -> white??
+//condense possible tips array to 5 max
+
 import UIKit
 import NotificationCenter
 
@@ -13,15 +18,19 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     //index 0 is the number 0, etc., the '.' is 11, delete is 12
     @IBOutlet var buttonCollection: [UIButton]!
+    @IBOutlet weak var incrementButton: UIButton!
+    @IBOutlet weak var decrementButton: UIButton!
+    
     @IBOutlet weak var billLabel: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var tipPercentLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var totalAmountLabel: UILabel!
-    @IBOutlet weak var incrementButton: UIButton!
-    @IBOutlet weak var decrementButton: UIButton!
+    @IBOutlet weak var placeholderLabel1: UILabel!
+    @IBOutlet weak var placeholderLabel2: UILabel!
     
     @IBOutlet weak var greenView: UIView!
+    @IBOutlet weak var middleStackView: UIStackView!
     @IBOutlet weak var lightBlueView: UIView!
     
     let yellow = UIColor(displayP3Red: 242.0/255.0, green: 208.0/255.0, blue: 59.0/255.0, alpha: 1.0)
@@ -31,6 +40,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     let darkestBlue = UIColor(displayP3Red: 0.0/255.0, green: 48.0/255.0, blue: 86.0/255.0, alpha: 1.0)
     let pink = UIColor(displayP3Red: 255.0/255.0, green: 190.0/255.0, blue: 222.0/255.0, alpha: 1.0)
     let placeholderColor = UIColor(displayP3Red: 48.0/255.0, green: 159.0/255.0, blue: 144.0/255.0, alpha: 1.0)
+    let almostBlack = UIColor(displayP3Red: 19.0/255.0, green: 42.0/255.0, blue: 59.0/255.0, alpha: 1.0)
+    let almostGray = UIColor(displayP3Red: 89.0/255.0, green: 105.0/255.0, blue: 118.0/255.0, alpha: 0.7)
     
     var calculations: [Calculation] = []
     var currentIndex: Int = 0
@@ -39,32 +50,40 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     var tip: String = ""
     var errorMessage: String = ""
     
-    let minPercent: Double = 15.0
-    let maxPercent: Double = 20.0
-    let deleteImage = UIImage(named: "keyboardDeleteButtonPNG1")
+    let minPercent: Double = 10.0
+    let maxPercent: Double = 25.0
+    let deleteImage = UIImage(named: "white-delete-button")
     let incrementImage = UIImage(named: "blueIncrementPNGSmall")
-    let decrementImage = UIImage(named: "blueDecrementPNGSmall")
+    let decrementImage = UIImage(named: "blueDecrementPNGSmallFixed")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
         billLabel.textColor = darkestBlue
         greenView.backgroundColor = green
         lightBlueView.backgroundColor = lightBlue
-        self.view.backgroundColor = darkBlue
+        self.view.backgroundColor = almostBlack
         tipLabel.textColor = darkestBlue
         tipPercentLabel.textColor = darkestBlue
         totalLabel.textColor = darkestBlue
         totalAmountLabel.textColor = darkestBlue
         billLabel.textColor = placeholderColor
+        placeholderLabel1.textColor = almostBlack
+        placeholderLabel2.textColor = almostBlack
+        incrementButton.layer.cornerRadius = 0.5 * 45
+        decrementButton.layer.cornerRadius = 0.5 * 45
         
-        print(buttonCollection[11])
+        //print(buttonCollection[11])
+        
+        //Set attributes for calc buttons
         for k in 0 ..< buttonCollection.count {
-            //buttonCollection[k].layer.cornerRadius = 5
-            buttonCollection[k].setTitleColor(lightBlue, for: .normal)
-            buttonCollection[k].layer.backgroundColor = darkBlue.cgColor
+            //buttonCollection[k].setTitleColor(lightBlue, for: .normal)
+            buttonCollection[k].layer.backgroundColor = almostGray.cgColor
+            buttonCollection[k].setTitleColor(UIColor.white, for: .normal)
             buttonCollection[k].isEnabled = true
+            buttonCollection[k].layer.cornerRadius = 5;
         }
         buttonCollection[11].setImage(deleteImage, for: .normal)
     }
@@ -78,7 +97,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
         else {
             //expanded
-            self.preferredContentSize = CGSize(width: maxSize.width, height: 240)
+            self.preferredContentSize = CGSize(width: maxSize.width, height: 305)
             //enable all buttons, change button text back, place delete image back
             showTipTotalLabels(true)
             showButtonStack(true)
@@ -118,7 +137,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     label = ""
                 }
                 buttonCollection[k].setTitle(label, for: .normal)
-                buttonCollection[k].layer.backgroundColor = darkBlue.cgColor
+                //buttonCollection[k].layer.backgroundColor = darkBlue.cgColor
                 buttonCollection[k].isEnabled = true
             }
         } else {
@@ -128,7 +147,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     buttonCollection[11].setImage(nil, for: .normal)
                 }
                 buttonCollection[k].setTitle("", for: .normal)
-                buttonCollection[k].layer.backgroundColor = darkBlue.cgColor
+                //buttonCollection[k].layer.backgroundColor = darkBlue.cgColor
                 buttonCollection[k].isEnabled = false
                 
                 showIncrementButtons(false)
@@ -143,6 +162,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 senderIndex = k
             }
         }
+        buttonCollection[senderIndex].layer.backgroundColor = almostGray.cgColor
         updateBillLabel(withIndex: senderIndex)
         getPossibleTips()
     }
@@ -201,6 +221,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         roundedTotals.append(Int(floor(totalsMax)))
         //Calculate totals in btwn max and min
         let delta: Int = roundedTotals[1] - roundedTotals[0]
+        
+        //what if delta == 1?????
         if delta > 1 {
             for item in 1..<delta {
                 roundedTotals.append(roundedTotals[0] + item)
@@ -249,11 +271,37 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         updateTipTotalLabel(incrementedBy: 0)
     }
     
+    
+    
     func updateTipTotalLabel(incrementedBy index: Int) {
+        //first condense calculations array into 10 items
+        let ITEMS: Int = 10
+        
+        var condensedCalcs: [Calculation] = []
+        if (calculations.count <= ITEMS) {
+            condensedCalcs = calculations
+        } else {
+            condensedCalcs.append(calculations[0])
+            var condensedIndex = 1
+            var calcsIndex = 1
+            while (calcsIndex<calculations.count && condensedIndex < ITEMS-1) {
+                let oldTip = Double(condensedCalcs[condensedIndex - 1].percent)
+                let newTip = Double(calculations[calcsIndex].percent)
+                if (floor(oldTip!) + 1 < floor(newTip!)) {
+                    condensedCalcs.append(calculations[calcsIndex])
+                    condensedIndex += 1
+                }
+                
+                calcsIndex += 1
+            }
+            condensedCalcs.append(calculations[calculations.count - 1])
+        }
+        
+        
         if index == 0 {
-            currentIndex = calculations.count / 2
+            currentIndex = condensedCalcs.count / 2
         } else if index > 0 {
-            if currentIndex < (calculations.count - 1) {
+            if currentIndex < (condensedCalcs.count - 1) {
                 currentIndex += 1
             }
         } else {
@@ -261,7 +309,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 currentIndex -= 1
             }
         }
-        let calc = calculations[currentIndex]
+        let calc = condensedCalcs[currentIndex]
         total = " $" + calc.total
         tip = "$" + calc.tip
         percent = " (" + calc.percent + "%)"
@@ -278,9 +326,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if willShow {
             incrementButton.setImage(incrementImage, for: .normal)
             decrementButton.setImage(decrementImage, for: .normal)
+            //set attributes for inc/dec buttons
+            incrementButton.layer.cornerRadius = 0.5 * 45
+            decrementButton.layer.cornerRadius = 0.5 * 45
+            incrementButton.layer.backgroundColor = almostGray.cgColor
+            decrementButton.layer.backgroundColor = almostGray.cgColor
         } else {
             incrementButton.setImage(nil, for: .normal)
             decrementButton.setImage(nil, for: .normal)
+            incrementButton.layer.cornerRadius = 0
+            decrementButton.layer.cornerRadius = 0
+            incrementButton.layer.backgroundColor = almostBlack.cgColor
+            decrementButton.layer.backgroundColor = almostBlack.cgColor
         }
         
         incrementButton.isEnabled = willShow
@@ -332,17 +389,5 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         showIncrementButtons(false)
         
         return nil
-    }
-    
-    
-    
-    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        
-        completionHandler(NCUpdateResult.newData)
     }
 }

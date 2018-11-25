@@ -37,8 +37,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var sliderPercent: Double = 0.175
     var lastTaxEntry: String?
     
-    let minPercent: Double = 15.0
-    let maxPercent: Double = 20.0
+    var condensedCalcs: [Calculation] {
+        //condense calculations array into 10 items
+        let ITEMS: Int = 10
+        var condensed: [Calculation] = []
+        if (calculations.count <= ITEMS) {
+            condensed = calculations
+        } else {
+            condensed.append(calculations[0])
+            var condensedIndex = 1
+            var calcsIndex = 1
+            while (calcsIndex<calculations.count && condensedIndex < ITEMS-1) {
+                let oldTip = Double(condensed[condensedIndex - 1].percent)
+                let newTip = Double(calculations[calcsIndex].percent)
+                if (floor(oldTip!) + 1 < floor(newTip!)) {
+                    condensed.append(calculations[calcsIndex])
+                    condensedIndex += 1
+                }
+                
+                calcsIndex += 1
+            }
+            condensed.append(calculations[calculations.count - 1])
+        }
+        
+        return condensed
+    }
+    
+    let minPercent: Double = 10.0
+    let maxPercent: Double = 25.0
     var justHadError: Bool = true
     
     //color palette
@@ -61,6 +87,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         percentSlider.minimumTrackTintColor = lightBlue
         view.backgroundColor = darkestBlue
         uppermostView.backgroundColor = darkBlue
+        
+        //slider max/min
+        percentSlider.minimumValue = Float(minPercent / 100)
+        percentSlider.maximumValue = Float(maxPercent / 100)
+        sliderLabelCollection[3].text = "10%"//String(format: "%0.1", minPercent) + "%"
+        sliderLabelCollection[2].text = "25%"//String(format: "%0.1", maxPercent) + "%"
         
         appTitleLabel.backgroundColor = darkBlue
         appTitleLabel.textColor = UIColor.white
@@ -90,8 +122,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         totalLabel.textColor = darkestBlue
         totalLabel.transform = CGAffineTransform(translationX: totalLabel.frame.width, y: 0)
         
-        billTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
-        taxTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
+        billTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        taxTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
     }
     
     //maintain status bar color
@@ -321,13 +353,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         calculateTip(withTotals: roundedTotals, andBill: billDouble)
         tableView.reloadData()
-        var index: Int = calculations.count / 2
-        var position: UITableViewScrollPosition!
+        var index: Int = condensedCalcs.count / 2
+        var position: UITableView.ScrollPosition!
         if billTextField.isEditing || taxTextField.isEditing {
             position = .top
-            if calculations.count <= 5 {
+            if condensedCalcs.count <= 5 {
                 index = 0
-            } else if calculations.count <= 8 {
+            } else if condensedCalcs.count <= 8 {
                 index -= 1
             }
         } else {
@@ -335,7 +367,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         let indexPath = IndexPath(row: index, section: 0)
         tableView.selectRow(at: indexPath, animated: true, scrollPosition: position)
-        setSlider(to: calculations[index].percent)
+        setSlider(to: condensedCalcs[index].percent)
         
         if justHadError {
             animateLabel(toLeft: true)
@@ -470,12 +502,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return calculations.count
+        return condensedCalcs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TipCell", for: indexPath)
-        let calculation = calculations[indexPath.row]
+        let calculation = condensedCalcs[indexPath.row]
         
         //if calc has error message in total spot (all error messages have n at beginning of string)...
         if calculation.total.contains("n") {
@@ -494,7 +526,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let calculation = calculations[indexPath.row]
+        let calculation = condensedCalcs[indexPath.row]
         guard !calculation.total.contains("n") else {return}  //same test as above, make sure calculation selected is not an error message
         totalLabel.text = "   $" + calculation.total
         setSlider(to: calculation.percent)

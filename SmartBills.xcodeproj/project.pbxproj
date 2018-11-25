@@ -13,13 +13,13 @@
 		A630E487216309B100258D4E /* SmartBillWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A630E47C216309B100258D4E /* SmartBillWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A630E48C21633BD400258D4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69BA6F921534F1F0007B9EA /* Assets.xcassets */; };
 		A630E48D21633BD800258D4E /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69BA70421534FA30007B9EA /* Calculation.swift */; };
-		A630E48F21634DCA00258D4E /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630E48E21634DCA00258D4E /* KeyboardButton.swift */; };
 		A69BA6F321534F1E0007B9EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69BA6F221534F1E0007B9EA /* AppDelegate.swift */; };
 		A69BA6F521534F1E0007B9EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69BA6F421534F1E0007B9EA /* ViewController.swift */; };
 		A69BA6F821534F1E0007B9EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69BA6F621534F1E0007B9EA /* Main.storyboard */; };
 		A69BA6FA21534F1F0007B9EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69BA6F921534F1F0007B9EA /* Assets.xcassets */; };
 		A69BA6FD21534F1F0007B9EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69BA6FB21534F1F0007B9EA /* LaunchScreen.storyboard */; };
 		A69BA70521534FA30007B9EA /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69BA70421534FA30007B9EA /* Calculation.swift */; };
+		A6F539F121A937FC009216A4 /* HighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F539F021A937FC009216A4 /* HighlightedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,6 @@
 		A630E482216309B100258D4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		A630E484216309B100258D4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A630E48B216336B900258D4E /* SmartBillWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartBillWidget.entitlements; sourceTree = "<group>"; };
-		A630E48E21634DCA00258D4E /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		A69BA6EF21534F1E0007B9EA /* SmartBills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartBills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A69BA6F221534F1E0007B9EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A69BA6F421534F1E0007B9EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		A69BA6FC21534F1F0007B9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A69BA6FE21534F1F0007B9EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A69BA70421534FA30007B9EA /* Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
+		A6F539F021A937FC009216A4 /* HighlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 				A630E48B216336B900258D4E /* SmartBillWidget.entitlements */,
 				A630E47F216309B100258D4E /* TodayViewController.swift */,
 				A630E481216309B100258D4E /* MainInterface.storyboard */,
-				A630E48E21634DCA00258D4E /* KeyboardButton.swift */,
+				A6F539F021A937FC009216A4 /* HighlightedButton.swift */,
 				A630E484216309B100258D4E /* Info.plist */,
 			);
 			path = SmartBillWidget;
@@ -187,6 +187,7 @@
 				TargetAttributes = {
 					A630E47B216309B100258D4E = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -195,6 +196,7 @@
 					};
 					A69BA6EE21534F1E0007B9EA = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -249,9 +251,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A630E48F21634DCA00258D4E /* KeyboardButton.swift in Sources */,
 				A630E480216309B100258D4E /* TodayViewController.swift in Sources */,
 				A630E48D21633BD800258D4E /* Calculation.swift in Sources */,
+				A6F539F121A937FC009216A4 /* HighlightedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +312,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35L7NUU7WG;
 				INFOPLIST_FILE = SmartBillWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,7 +321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HLG16.SmartBills.SmartBillWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -331,7 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35L7NUU7WG;
 				INFOPLIST_FILE = SmartBillWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,7 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HLG16.SmartBills.SmartBillWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -467,14 +469,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35L7NUU7WG;
 				INFOPLIST_FILE = SmartBills/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = HLG16.SmartBills;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -487,14 +489,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35L7NUU7WG;
 				INFOPLIST_FILE = SmartBills/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = HLG16.SmartBills;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

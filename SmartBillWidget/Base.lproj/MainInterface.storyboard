@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,10 +15,213 @@
             <objects>
                 <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="SmartBillWidget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LqK-DY-h7f" userLabel="Green View">
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="MiL-M3-8sv">
+                                <rect key="frame" x="10" y="70" width="300" height="162"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="746" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="1Hg-T5-Lfg" userLabel="Buttons">
+                                        <rect key="frame" x="0.0" y="0.0" width="242" height="162"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="739" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6Vu-ba-Y8b">
+                                                <rect key="frame" x="0.0" y="0.0" width="242" height="36"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOJ-eD-cf6" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="f8h-qB-bjo"/>
+                                                        </constraints>
+                                                        <state key="normal" title="1">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="dwp-8Q-ehn"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKn-Sr-7LU" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                        <rect key="frame" x="84.5" y="0.0" width="73" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="1ea-gg-Kur"/>
+                                                        </constraints>
+                                                        <state key="normal" title="2">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="p9b-s0-Yiu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQd-xX-9Vj" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                        <rect key="frame" x="169.5" y="0.0" width="72.5" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="NQf-KR-WoX"/>
+                                                        </constraints>
+                                                        <state key="normal" title="3">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="gKy-DD-DLA"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="739" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="E4g-C6-iFU">
+                                                <rect key="frame" x="0.0" y="42" width="242" height="36"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZ8-dK-TOd" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="KHu-fE-hgC"/>
+                                                        </constraints>
+                                                        <state key="normal" title="4">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="YkW-Wp-Anw"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hje-aV-s40" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                        <rect key="frame" x="84.5" y="0.0" width="73" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="wNY-IV-LVD"/>
+                                                        </constraints>
+                                                        <state key="normal" title="5"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="vzq-8P-KZq"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WE-6J-taQ" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                        <rect key="frame" x="169.5" y="0.0" width="72.5" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="jpZ-mY-98D"/>
+                                                        </constraints>
+                                                        <state key="normal" title="6"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="BLh-Yl-1SE"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="739" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="XdQ-2J-wRD">
+                                                <rect key="frame" x="0.0" y="84" width="242" height="36"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ma-AN-ZCg" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="lgg-kh-WTI"/>
+                                                        </constraints>
+                                                        <state key="normal" title="7"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="nZd-kI-kTT"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lie-m1-ENQ" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                        <rect key="frame" x="84.5" y="0.0" width="73" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="TGo-Ab-bmY"/>
+                                                        </constraints>
+                                                        <state key="normal" title="8"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="QRW-W5-kwe"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBO-eo-koJ" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                        <rect key="frame" x="169.5" y="0.0" width="72.5" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="Y5m-AD-34t"/>
+                                                        </constraints>
+                                                        <state key="normal" title="9"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="kiY-Vw-pE9"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="739" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="HDC-pT-xiV">
+                                                <rect key="frame" x="0.0" y="126" width="242" height="36"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1H-f3-iX5" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="Wof-x9-7W4"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="."/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="UBh-Yd-XzF"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSv-Hg-iwC" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                        <rect key="frame" x="84.5" y="0.0" width="73" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="A8E-2r-CNF"/>
+                                                        </constraints>
+                                                        <state key="normal" title="0"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="3EL-TM-F4E"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PuZ-Vd-jYn" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                        <rect key="frame" x="169.5" y="0.0" width="72.5" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="z5z-eg-6JS"/>
+                                                        </constraints>
+                                                        <state key="normal" image="white-delete-button"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="hP1-W6-zJz"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="746" axis="vertical" distribution="fillProportionally" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="7wF-Yp-P8a" userLabel="Up Down">
+                                        <rect key="frame" x="255" y="0.0" width="45" height="162"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feR-Yj-4we">
+                                                <rect key="frame" x="17.5" y="0.0" width="10" height="0.0"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" id="Bha-P4-1U6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0q-8Y-PVv" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                <rect key="frame" x="7.5" y="24" width="30" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="Zqb-HY-TGI"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="incrementButtonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="oLa-yC-RNq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUK-1P-ofa" customClass="HighlightedButton" customModule="SmartBillWidget" customModuleProvider="target">
+                                                <rect key="frame" x="7.5" y="93" width="30" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="Qad-NG-LJL"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="decrementButtonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="4dy-6H-6jP"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5y-gS-dVV">
+                                                <rect key="frame" x="17.5" y="162" width="10" height="0.0"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" id="e5a-Fa-9KL"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="tYs-8s-9Oa"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="LqK-DY-h7f" userLabel="Green View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aen-6k-cLb">
@@ -37,211 +240,42 @@
                                     <constraint firstAttribute="trailing" secondItem="Aen-6k-cLb" secondAttribute="trailing" constant="5" id="zzW-KK-NKe"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1Hg-T5-Lfg">
-                                <rect key="frame" x="40" y="60" width="240" height="120"/>
+                            <view contentMode="scaleToFill" verticalHuggingPriority="245" verticalCompressionResistancePriority="756" translatesAutoresizingMaskIntoConstraints="NO" id="bl8-FL-358" userLabel="Light Blue View">
+                                <rect key="frame" x="0.0" y="260" width="320" height="60"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Vu-ba-Y8b">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wW-jb-9Th" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="1">
-                                                    <color key="titleColor" red="0.0" green="0.63137254899999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="A1B-oy-97I"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slF-gv-7ZH" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="80" y="0.0" width="80" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="2">
-                                                    <color key="titleColor" red="0.0" green="0.63137254899999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="FAA-ji-QNS"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Cf-IU-QS3" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="160" y="0.0" width="80" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="3">
-                                                    <color key="titleColor" red="0.0" green="0.63137254899999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="Cbb-CR-U8E"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="E4g-C6-iFU">
-                                        <rect key="frame" x="0.0" y="30" width="240" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7m4-UB-PO5" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="4">
-                                                    <color key="titleColor" red="0.0" green="0.63137254899999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="ZKB-wx-UPI"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3Q-n9-Cdu" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="80" y="0.0" width="80" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="5">
-                                                    <color key="titleColor" red="0.0" green="0.63137254899999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="DB0-ol-lQc"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gB-Qg-iXR" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="160" y="0.0" width="80" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="6">
-                                                    <color key="titleColor" red="0.0" green="0.63137254899999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="aOG-G4-YaD"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XdQ-2J-wRD">
-                                        <rect key="frame" x="0.0" y="60" width="240" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7T-Rz-nSJ" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="7">
-                                                    <color key="titleColor" red="0.0" green="0.63137254899999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="XJK-ee-vfp"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfD-rs-MLC" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="80" y="0.0" width="80" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="8">
-                                                    <color key="titleColor" red="0.0" green="0.63137254899999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="nsq-R4-hcY"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Lt-Ag-v0b" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="160" y="0.0" width="80" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="9">
-                                                    <color key="titleColor" red="0.0" green="0.63137254899999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="fOd-VO-lXn"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HDC-pT-xiV">
-                                        <rect key="frame" x="0.0" y="90" width="240" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3K5-39-Qxz" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                                <state key="normal" title=".">
-                                                    <color key="titleColor" red="0.0" green="0.63137254899999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="CUN-Bw-gHU"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXs-8d-PQc" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="80" y="0.0" width="80" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="0">
-                                                    <color key="titleColor" red="0.0" green="0.63137254899999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="vHF-4H-zzd"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtF-5R-u8l" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="160" y="0.0" width="80" height="30"/>
-                                                <state key="normal" title="Delete" image="keyboardDeleteButtonPNG1"/>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="I5r-YE-aMQ"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="E4g-C6-iFU" firstAttribute="leading" secondItem="1Hg-T5-Lfg" secondAttribute="leading" id="44J-13-2Nk"/>
-                                    <constraint firstAttribute="trailing" secondItem="E4g-C6-iFU" secondAttribute="trailing" id="5en-g9-Uf8"/>
-                                    <constraint firstItem="HDC-pT-xiV" firstAttribute="leading" secondItem="1Hg-T5-Lfg" secondAttribute="leading" id="WOo-lo-rNU"/>
-                                    <constraint firstAttribute="trailing" secondItem="6Vu-ba-Y8b" secondAttribute="trailing" id="db6-0w-moS"/>
-                                    <constraint firstAttribute="trailing" secondItem="HDC-pT-xiV" secondAttribute="trailing" id="n64-Fi-t7H"/>
-                                    <constraint firstAttribute="trailing" secondItem="XdQ-2J-wRD" secondAttribute="trailing" id="nLj-4k-LhR"/>
-                                    <constraint firstItem="6Vu-ba-Y8b" firstAttribute="leading" secondItem="1Hg-T5-Lfg" secondAttribute="leading" id="ofk-WH-Uyt"/>
-                                    <constraint firstItem="XdQ-2J-wRD" firstAttribute="leading" secondItem="1Hg-T5-Lfg" secondAttribute="leading" id="uzH-vE-eBK"/>
-                                </constraints>
-                            </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bl8-FL-358" userLabel="Light Blue View">
-                                <rect key="frame" x="0.0" y="180" width="320" height="60"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aDd-4R-WSe" userLabel="Inc/Dec Stack">
-                                        <rect key="frame" x="250" y="0.0" width="70" height="60"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVc-Pf-u7H" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
-                                                <connections>
-                                                    <action selector="incrementButtonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="yte-uV-BcF"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liL-Uo-0xg" customClass="KeyboardButton" customModule="SmartBillWidget" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="30" width="70" height="30"/>
-                                                <connections>
-                                                    <action selector="decrementButtonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="OBk-tr-ty3"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="xMr-bA-wKM"/>
-                                        </constraints>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Pyi-SE-vME" userLabel="Total Tip Stack">
-                                        <rect key="frame" x="5" y="0.0" width="245" height="55"/>
+                                        <rect key="frame" x="5" y="0.0" width="310" height="55"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mux-4D-qkT">
-                                                <rect key="frame" x="0.0" y="0.0" width="41" height="55"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="35" id="td7-HN-SBk"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.18823529410000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press &quot;Show More&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QI-P9-vIw">
-                                                <rect key="frame" x="41" y="0.0" width="121.5" height="55"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.18823529410000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9t-ma-oUS">
-                                                <rect key="frame" x="162.5" y="0.0" width="41.5" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="55"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="42" id="oeb-i8-PJw"/>
+                                                    <constraint firstAttribute="width" constant="52" id="oeb-i8-PJw"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <color key="textColor" red="0.0" green="0.18823529410000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="air-Pg-AI0">
-                                                <rect key="frame" x="204" y="0.0" width="41" height="55"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="48.5" y="0.0" width="48" height="55"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="ash-4c-TlY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                <color key="textColor" red="0.0" green="0.18823529410000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mux-4D-qkT">
+                                                <rect key="frame" x="96.5" y="0.0" width="48.5" height="55"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="td7-HN-SBk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <color key="textColor" red="0.0" green="0.18823529410000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press &quot;Show More&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QI-P9-vIw">
+                                                <rect key="frame" x="145" y="0.0" width="165" height="55"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                 <color key="textColor" red="0.0" green="0.18823529410000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -250,57 +284,56 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.63137254899999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="aDd-4R-WSe" firstAttribute="leading" secondItem="Pyi-SE-vME" secondAttribute="trailing" id="7nX-6j-U0R"/>
-                                    <constraint firstItem="aDd-4R-WSe" firstAttribute="top" secondItem="bl8-FL-358" secondAttribute="top" id="GSs-wU-w74"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pyi-SE-vME" secondAttribute="trailing" constant="5" id="IO2-RB-cJ7"/>
                                     <constraint firstAttribute="bottom" secondItem="Pyi-SE-vME" secondAttribute="bottom" constant="5" id="Oj1-LX-uEi"/>
-                                    <constraint firstAttribute="bottom" secondItem="aDd-4R-WSe" secondAttribute="bottom" id="SDm-af-J0p"/>
+                                    <constraint firstAttribute="height" constant="60" id="b7C-cB-VWN"/>
                                     <constraint firstItem="Pyi-SE-vME" firstAttribute="top" secondItem="bl8-FL-358" secondAttribute="top" id="ntb-Nt-6FQ"/>
                                     <constraint firstItem="Pyi-SE-vME" firstAttribute="leading" secondItem="bl8-FL-358" secondAttribute="leading" constant="5" id="rDG-7R-DbT"/>
-                                    <constraint firstAttribute="trailing" secondItem="aDd-4R-WSe" secondAttribute="trailing" id="zv8-NZ-ZwR"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.84511451198630139" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bl8-FL-358" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="4pU-K4-NcZ"/>
-                            <constraint firstItem="bl8-FL-358" firstAttribute="bottom" secondItem="ssy-KU-ocm" secondAttribute="bottom" id="Snf-mY-jVn"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="1Hg-T5-Lfg" secondAttribute="trailing" constant="40" id="XAe-YU-aEA"/>
-                            <constraint firstItem="bl8-FL-358" firstAttribute="height" secondItem="LqK-DY-h7f" secondAttribute="height" id="bLt-pa-xXu"/>
+                            <constraint firstAttribute="bottom" secondItem="bl8-FL-358" secondAttribute="bottom" id="BQv-Mp-OFU"/>
+                            <constraint firstItem="MiL-M3-8sv" firstAttribute="top" secondItem="LqK-DY-h7f" secondAttribute="bottom" constant="10" id="KkM-14-HHz"/>
+                            <constraint firstAttribute="trailing" secondItem="MiL-M3-8sv" secondAttribute="trailing" constant="10" id="RXE-QI-P3x"/>
+                            <constraint firstItem="MiL-M3-8sv" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="10" id="aga-R9-uJk"/>
                             <constraint firstItem="LqK-DY-h7f" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="bVq-bx-IWW"/>
-                            <constraint firstItem="1Hg-T5-Lfg" firstAttribute="top" secondItem="LqK-DY-h7f" secondAttribute="bottom" id="dY3-87-vgR"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="bl8-FL-358" secondAttribute="trailing" id="eal-L6-tYL"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="LqK-DY-h7f" secondAttribute="trailing" id="gcK-5O-U5o"/>
-                            <constraint firstItem="1Hg-T5-Lfg" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="40" id="hdq-wk-zmJ"/>
-                            <constraint firstItem="bl8-FL-358" firstAttribute="top" secondItem="1Hg-T5-Lfg" secondAttribute="bottom" id="v88-VZ-XiC"/>
                             <constraint firstItem="LqK-DY-h7f" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="xc0-O3-vnU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="240"/>
+                    <size key="freeformSize" width="320" height="320"/>
                     <connections>
                         <outlet property="billLabel" destination="Aen-6k-cLb" id="b1x-vM-DJD"/>
-                        <outlet property="decrementButton" destination="liL-Uo-0xg" id="Yij-zW-p5Q"/>
+                        <outlet property="decrementButton" destination="oUK-1P-ofa" id="2mL-DB-fcZ"/>
                         <outlet property="greenView" destination="LqK-DY-h7f" id="EBJ-Ep-0Lw"/>
-                        <outlet property="incrementButton" destination="RVc-Pf-u7H" id="0BF-8s-d3g"/>
+                        <outlet property="incrementButton" destination="W0q-8Y-PVv" id="yKy-Ti-UJJ"/>
                         <outlet property="lightBlueView" destination="bl8-FL-358" id="WKg-Ta-jkI"/>
+                        <outlet property="middleStackView" destination="MiL-M3-8sv" id="Y02-hL-1bf"/>
+                        <outlet property="placeholderLabel1" destination="feR-Yj-4we" id="0oy-vj-W95"/>
+                        <outlet property="placeholderLabel2" destination="P5y-gS-dVV" id="Wem-NB-i2a"/>
                         <outlet property="tipLabel" destination="Mux-4D-qkT" id="etz-CY-pfB"/>
                         <outlet property="tipPercentLabel" destination="5QI-P9-vIw" id="N3m-xB-EGw"/>
                         <outlet property="totalAmountLabel" destination="air-Pg-AI0" id="Kuq-Lf-MK9"/>
                         <outlet property="totalLabel" destination="A9t-ma-oUS" id="uLP-dE-UUS"/>
-                        <outletCollection property="buttonCollection" destination="aXs-8d-PQc" collectionClass="NSMutableArray" id="AJZ-Of-ZC2"/>
-                        <outletCollection property="buttonCollection" destination="1wW-jb-9Th" collectionClass="NSMutableArray" id="6qj-8Y-dR4"/>
-                        <outletCollection property="buttonCollection" destination="slF-gv-7ZH" collectionClass="NSMutableArray" id="Gik-tv-KOd"/>
-                        <outletCollection property="buttonCollection" destination="5Cf-IU-QS3" collectionClass="NSMutableArray" id="7Fj-xi-BwK"/>
-                        <outletCollection property="buttonCollection" destination="7m4-UB-PO5" collectionClass="NSMutableArray" id="KBk-Rh-TJy"/>
-                        <outletCollection property="buttonCollection" destination="o3Q-n9-Cdu" collectionClass="NSMutableArray" id="Fyp-lX-356"/>
-                        <outletCollection property="buttonCollection" destination="2gB-Qg-iXR" collectionClass="NSMutableArray" id="UPA-5e-K1E"/>
-                        <outletCollection property="buttonCollection" destination="r7T-Rz-nSJ" collectionClass="NSMutableArray" id="LBi-9e-6Oi"/>
-                        <outletCollection property="buttonCollection" destination="XfD-rs-MLC" collectionClass="NSMutableArray" id="GSH-On-BNR"/>
-                        <outletCollection property="buttonCollection" destination="7Lt-Ag-v0b" collectionClass="NSMutableArray" id="eMl-3A-NLd"/>
-                        <outletCollection property="buttonCollection" destination="3K5-39-Qxz" collectionClass="NSMutableArray" id="Gr0-Zt-bAv"/>
-                        <outletCollection property="buttonCollection" destination="GtF-5R-u8l" collectionClass="NSMutableArray" id="QTF-dW-3eO"/>
+                        <outletCollection property="buttonCollection" destination="CSv-Hg-iwC" collectionClass="NSMutableArray" id="90B-ww-Zxh"/>
+                        <outletCollection property="buttonCollection" destination="zOJ-eD-cf6" collectionClass="NSMutableArray" id="HUF-vf-4OO"/>
+                        <outletCollection property="buttonCollection" destination="GKn-Sr-7LU" collectionClass="NSMutableArray" id="htJ-de-AAb"/>
+                        <outletCollection property="buttonCollection" destination="UQd-xX-9Vj" collectionClass="NSMutableArray" id="15l-gQ-xx3"/>
+                        <outletCollection property="buttonCollection" destination="pZ8-dK-TOd" collectionClass="NSMutableArray" id="prI-aF-JZ1"/>
+                        <outletCollection property="buttonCollection" destination="hje-aV-s40" collectionClass="NSMutableArray" id="NQP-bP-hJU"/>
+                        <outletCollection property="buttonCollection" destination="0WE-6J-taQ" collectionClass="NSMutableArray" id="Q28-H9-K3i"/>
+                        <outletCollection property="buttonCollection" destination="7Ma-AN-ZCg" collectionClass="NSMutableArray" id="PDG-g7-vQ7"/>
+                        <outletCollection property="buttonCollection" destination="lie-m1-ENQ" collectionClass="NSMutableArray" id="OnU-s4-tIx"/>
+                        <outletCollection property="buttonCollection" destination="RBO-eo-koJ" collectionClass="NSMutableArray" id="XpJ-Ng-wPV"/>
+                        <outletCollection property="buttonCollection" destination="t1H-f3-iX5" collectionClass="NSMutableArray" id="deS-V5-ujn"/>
+                        <outletCollection property="buttonCollection" destination="PuZ-Vd-jYn" collectionClass="NSMutableArray" id="XZZ-S0-dqA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -309,6 +342,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="keyboardDeleteButtonPNG1" width="1024" height="1024"/>
+        <image name="white-delete-button" width="1024" height="700"/>
     </resources>
 </document>
